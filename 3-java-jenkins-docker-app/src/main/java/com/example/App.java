@@ -9,7 +9,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Starting Simple HTTP Server...");
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
 
         server.createContext("/", exchange -> {
             String response = "Hello from Java App Running inside Docker on Mac!";
@@ -22,6 +22,6 @@ public class App {
         server.setExecutor(null);
         server.start();
 
-        System.out.println("Server is running at http://localhost:8080/");
+        System.out.println("Server is running at http://localhost:80/");
     }
 }
